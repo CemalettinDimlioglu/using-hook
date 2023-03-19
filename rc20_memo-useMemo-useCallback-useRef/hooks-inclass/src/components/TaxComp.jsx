@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 
 const TaxComp = ({taxData}) => {
   console.log("Render =>TaxComp componenti")
@@ -7,4 +7,4 @@ const TaxComp = ({taxData}) => {
   return <div>TaxComp : {taxData.ship}</div>;
 };
 
-export default TaxComp;
+export default memo(TaxComp);
