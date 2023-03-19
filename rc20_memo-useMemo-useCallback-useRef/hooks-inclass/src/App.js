@@ -1,16 +1,21 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./components/Header";
 import HeaderMemo from "./components/HeaderMemo";
-import TaxComp from "./components/TaxComp"
+import TaxComp from "./components/TaxComp";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [user, setUser] =useState("cemalettin")
-   const taxData ={taxRate:0.18, ship:25};
-   const [taxDataState, setTaxDataState] = useState({
-    taxRate: 0.18, ship: 25
-   })
-
+  const [user, setUser] = useState("cemalettin");
+  const taxData = { taxRate: 0.18, ship: 25 };
+  const [taxDataState, setTaxDataState] = useState({
+    taxRate: 0.18,
+    ship: 25,
+  });
+  const taxData1 = useRef({
+    taxRate: 0.18,
+    ship: 25,
+  });
+  console.log("taxData1");
   return (
     <div className="container mt-2">
       <div>
@@ -35,10 +40,11 @@ function App() {
       <hr />
       {/* <HeaderMemo user={user} /> */}
       <HeaderMemo count={count} />
-      <hr/>
+      <hr />
       {/* <TaxComp taxData ={taxData} /> */}
-      <TaxComp taxData ={taxDataState} />
-
+      {/* <TaxComp taxData={taxData} /> */}
+      <br />
+      <TaxComp taxData={taxData1} />
     </div>
   );
 }

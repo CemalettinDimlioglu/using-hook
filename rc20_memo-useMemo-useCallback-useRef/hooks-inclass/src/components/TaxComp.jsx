@@ -4,7 +4,7 @@ const TaxComp = ({taxData}) => {
   console.log("Render =>TaxComp componenti")
 
 
-  return <div>TaxComp : {taxData.ship}</div>;
+  return <div>TaxComp : {taxData.current.ship}</div>;
 };
 
 export default memo(TaxComp);
