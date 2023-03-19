@@ -28,6 +28,7 @@ function App() {
         </button>
       </div>
       <hr />
+      {/* <HeaderMemo user={user} /> */}
       <HeaderMemo user={user} />
     </div>
   );
