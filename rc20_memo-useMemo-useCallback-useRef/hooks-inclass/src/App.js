@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import HeaderMemo from "./components/HeaderMemo";
+import TaxComp from "./components/TaxComp"
 
 function App() {
   const [count, setCount] = useState(0);
   const [user, setUser] =useState("cemalettin")
+   const taxData ={taxRate:0.18, ship:25};
 
   return (
     <div className="container mt-2">
@@ -29,7 +31,10 @@ function App() {
       </div>
       <hr />
       {/* <HeaderMemo user={user} /> */}
-      <HeaderMemo user={user} />
+      <HeaderMemo count={count} />
+      <hr/>
+      <TaxComp taxData ={taxData} />
+
     </div>
   );
 }
