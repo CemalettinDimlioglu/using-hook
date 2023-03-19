@@ -7,6 +7,9 @@ function App() {
   const [count, setCount] = useState(0);
   const [user, setUser] =useState("cemalettin")
    const taxData ={taxRate:0.18, ship:25};
+   const [taxDataState, setTaxDataState] = useState({
+    taxRate: 0.18, ship: 25
+   })
 
   return (
     <div className="container mt-2">
@@ -33,7 +36,8 @@ function App() {
       {/* <HeaderMemo user={user} /> */}
       <HeaderMemo count={count} />
       <hr/>
-      <TaxComp taxData ={taxData} />
+      {/* <TaxComp taxData ={taxData} /> */}
+      <TaxComp taxData ={taxDataState} />
 
     </div>
   );
