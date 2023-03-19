@@ -15,12 +15,19 @@ function App() {
         <p className="text-center">Count : {count}</p>
         <button
           className="btn btn-danger d-flex mx-auto"
-          onClick={() => setCount(count + 1)}>
+          onClick={() => setCount(count + 1)}
+        >
           Increment
+        </button>
+        <button
+          className="btn btn-success d-flex mx-auto"
+          onClick={() => setCount(count - 1)}
+        >
+          Decrement
         </button>
       </div>
       <hr />
-      <HeaderMemo/>
+      <HeaderMemo />
     </div>
   );
 }
