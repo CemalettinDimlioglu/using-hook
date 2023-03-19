@@ -1,28 +1,38 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const UseRefComp = () => {
-  console.log("Render =>useRefComp");
-  const [text, setText]= useState("")
+  console.log("Render => useRefComp")
+  const [text,setText] = useState("")
   const inputRef = useRef()
   const divRef = useRef()
-  const handleSearch = ()=>{
-    console.log(text);
-    console.log(inputRef.current);
-    console.log(inputRef);
-    // setText(inputRef.current.value)// console.log(inputRef.current.value);
-   console.log(divRef.current.lastElementChild);
-   console.log(divRef.current.lastElementChild.lastElementChild);
-   console.log(divRef.current.lastElementChild.lastElementChild.innerText);
+
+  const handleSearch = () =>{
+    console.log(text)
+    console.log(inputRef.current)
+    console.log(inputRef)
+    console.log(inputRef.current.value);
+    setText(inputRef.current.value);
+    console.log(divRef.current)
+    console.log(divRef.current.lastElementChild)
+    console.log(divRef.current.lastElementChild.lastElementChild);
+    console.log(divRef.current.lastElementChild.lastElementChild.innerText);
   }
   useEffect(()=>{
-inputRef.current.focus()
+    inputRef.current.focus()
   },[])
   return (
-    <div ref={divRef} >
+    <div ref={divRef}>
       UseRefComp
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <input type="text" ref={inputRef} onChange={(e)=>setText(e.target.value)} />
-        <button type="button" onClick={handleSearch()} >
+        {/* <input
+          type="text"
+          onChange={(e) => setText(e.target.value)}
+        /> */}
+        <input
+          type="text"
+          ref={inputRef}
+        />
+        <button type="button" onClick={handleSearch}>
           Search
         </button>
       </div>
