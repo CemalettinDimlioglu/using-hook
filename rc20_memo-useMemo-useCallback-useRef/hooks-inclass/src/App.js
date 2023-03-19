@@ -4,6 +4,7 @@ import HeaderMemo from "./components/HeaderMemo";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [user, setUser] =useState("cemalettin")
 
   return (
     <div className="container mt-2">
@@ -21,13 +22,13 @@ function App() {
         </button>
         <button
           className="btn btn-success d-flex mx-auto"
-          onClick={() => setCount(count - 1)}
+          onClick={() => setUser("selahaddin")}
         >
-          Decrement
+          Change User
         </button>
       </div>
       <hr />
-      <HeaderMemo />
+      <HeaderMemo user={user} />
     </div>
   );
 }
